@@ -22,6 +22,24 @@ cd "$(dirname "$0")" && python3 -m http.server 8788
 - `index.html` head 內有一段註解（og:url / og:image / canonical），把 `https://example.com/` 換成正式網域後解除註解——LINE/FB 分享才會出圖。
 - 若申請自訂網域，建議 `yaohsiang.tw` 或 `yaohsianghomecare.com` 之類。
 
+## 活動集錦（欄位已建置，內容後補）
+
+1. 照片放入 `assets/gallery/`（建議先壓到寬 1200px 以下、去識別化／確認肖像權）。
+2. 編輯 `assets/gallery/list.json`：
+```json
+{ "items": [ { "src": "assets/gallery/檔名.jpg", "caption": "活動說明", "date": "2026/07" } ] }
+```
+3. push 後首頁「活動集錦」區塊自動出現（list 為空時整區隱藏）。
+
+## 衛教專欄（欄位已建置，供文章管線對接）
+
+1. 用 `articles/_template.html` 產生文章頁：替換 `{{TITLE}}`、`{{DATE}}`、`{{SUMMARY}}`、`{{CONTENT}}`（內文用 `<h2>/<p>/<ul>` 即可），存成 `articles/<slug>.html`。
+2. 在 `articles/list.json` 加一筆（新文章放最前面，首頁顯示前 6 篇）：
+```json
+{ "articles": [ { "slug": "檔名不含副檔名", "title": "文章標題", "date": "2026/07/06", "summary": "一兩句摘要" } ] }
+```
+3. push 後首頁「衛教專欄」區塊自動出現。第二階段可讓每日衛教文章管線直接寫這兩類檔案。
+
 ## 內容來源
 - 機構簡介：01_行政管理/單位營運備份/.../fb/專業/單位簡介：.docx
 - 立案資訊：01_行政管理/許可證照/設立許可證書_109年.png（北市社老字第10930548741號）

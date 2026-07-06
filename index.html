@@ -238,6 +238,23 @@ table.price{width:100%;border-collapse:collapse;min-width:680px;font-size:.94rem
 .join-box .btn-amber{background:var(--amber);color:var(--brown);font-weight:900}
 .join-box .btn-amber:hover{background:#F5C96B;color:var(--brown)}
 
+/* 活動集錦 */
+.gallery{background:#FFF9EC}
+.g-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.g-item{margin:0;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 4px 14px rgba(75,54,33,.07)}
+.g-item img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.g-item figcaption{padding:12px 16px;font-size:.92rem;color:#54473A}
+.g-item figcaption small{display:block;color:#6B5A48;font-size:.8rem;margin-top:2px}
+
+/* 衛教專欄 */
+.art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.art-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;color:inherit;box-shadow:0 4px 14px rgba(75,54,33,.06);transition:transform .15s,box-shadow .2s}
+.art-card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(75,54,33,.14)}
+.art-card time{font-size:.82rem;color:#6B5A48}
+.art-card h3{color:var(--brown);font-size:1.06rem;margin:6px 0 8px;font-weight:900;line-height:1.5}
+.art-card p{font-size:.92rem;color:#54473A;margin-bottom:14px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.art-card .more{margin-top:auto;color:var(--orange-dark);font-weight:700;font-size:.9rem}
+
 /* 聯絡 */
 .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:28px;align-items:stretch}
 .contact-card{background:#fff;border-radius:22px;border:1px solid var(--line);padding:34px;box-shadow:0 4px 16px rgba(75,54,33,.07)}
@@ -273,7 +290,7 @@ footer a{color:#F5C96B}
   .cta-row{justify-content:center}
   .about-grid,.flow-cols,.contact-grid{grid-template-columns:1fr}
   .copay{grid-template-columns:repeat(3,1fr);gap:12px}
-  .who .cards,.team-grid{grid-template-columns:repeat(2,1fr)}
+  .who .cards,.team-grid,.g-grid,.art-grid{grid-template-columns:repeat(2,1fr)}
   .svc-grid{grid-template-columns:1fr}
   .stats .container{grid-template-columns:repeat(2,1fr)}
   footer .cols{grid-template-columns:1fr}
@@ -296,7 +313,7 @@ footer a{color:#F5C96B}
   .nav ul::-webkit-scrollbar{display:none}
   .nav ul a{white-space:nowrap;font-size:.9rem;padding:6px 10px}
   section{scroll-margin-top:112px}
-  .who .cards,.team-grid{grid-template-columns:1fr}
+  .who .cards,.team-grid,.g-grid,.art-grid{grid-template-columns:1fr}
   .copay{grid-template-columns:1fr}
   .cp{display:flex;align-items:baseline;justify-content:space-between;text-align:left;padding:16px 20px}
   .cp b{margin:0}
@@ -518,6 +535,18 @@ footer a{color:#F5C96B}
     </div>
   </section>
 
+  <!-- 活動集錦（assets/gallery/list.json 有項目才顯示） -->
+  <section class="gallery" id="gallery" hidden>
+    <div class="container">
+      <div class="sec-head">
+        <span class="tag">GALLERY</span>
+        <h2>活動集錦</h2>
+        <p>講座、社區活動與團隊工作的紀錄片段。</p>
+      </div>
+      <div class="g-grid"></div>
+    </div>
+  </section>
+
   <!-- 收費標準 -->
   <section class="pricing" id="pricing">
     <div class="container">
@@ -586,6 +615,18 @@ footer a{color:#F5C96B}
           <div class="a">臺北市全區，由專業人員直接到府服務，不需出門奔波。</div>
         </details>
       </div>
+    </div>
+  </section>
+
+  <!-- 衛教專欄（articles/list.json 有文章才顯示） -->
+  <section id="articles" hidden>
+    <div class="container">
+      <div class="sec-head">
+        <span class="tag">HEALTH EDUCATION</span>
+        <h2>衛教專欄</h2>
+        <p>由專業團隊整理的照顧知識與衛教文章。</p>
+      </div>
+      <div class="art-grid"></div>
     </div>
   </section>
 
@@ -691,5 +732,41 @@ footer a{color:#F5C96B}
 
 <a class="float-call" href="tel:+886227035276"><span aria-hidden="true">📞</span> 電話諮詢</a>
 
+<script>
+/* 活動集錦與衛教專欄：資料檔有內容才顯示區塊（欄位先建置，內容後補） */
+async function loadJSON(url){
+  try{ const r = await fetch(url, {cache:'no-store'}); if(!r.ok) return null; return await r.json(); }
+  catch(e){ return null; }
+}
+function esc(s){ return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function renderGallery(items){
+  if(!items || !items.length) return;
+  const sec = document.getElementById('gallery');
+  sec.querySelector('.g-grid').innerHTML = items.map(it => `
+    <figure class="g-item">
+      <a href="${esc(it.src)}" target="_blank" rel="noopener"><img src="${esc(it.src)}" alt="${esc(it.caption || '活動照片')}" loading="lazy"></a>
+      <figcaption>${esc(it.caption || '')}${it.date ? `<small>${esc(it.date)}</small>` : ''}</figcaption>
+    </figure>`).join('');
+  sec.hidden = false;
+}
+function renderArticles(list){
+  if(!list || !list.length) return;
+  const sec = document.getElementById('articles');
+  sec.querySelector('.art-grid').innerHTML = list.slice(0, 6).map(a => `
+    <a class="art-card" href="articles/${esc(a.slug)}.html">
+      <time>${esc(a.date || '')}</time>
+      <h3>${esc(a.title)}</h3>
+      <p>${esc(a.summary || '')}</p>
+      <span class="more">閱讀全文 →</span>
+    </a>`).join('');
+  sec.hidden = false;
+}
+(async () => {
+  const g = await loadJSON('assets/gallery/list.json');
+  renderGallery(g && g.items);
+  const l = await loadJSON('articles/list.json');
+  renderArticles(l && l.articles);
+})();
+</script>
 </body>
 </html>
