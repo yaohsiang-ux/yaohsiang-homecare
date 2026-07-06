@@ -2,6 +2,11 @@
 
 單一 `index.html` + `assets/`（logo、favicon），純靜態、無後端、無框架。
 
+**✅ 已上線（2026-07-06）**：https://yaohsiang-ux.github.io/yaohsiang-homecare/
+Repo：https://github.com/yaohsiang-ux/yaohsiang-homecare（GitHub Pages，main 分支根目錄）
+
+改版流程：改本資料夾的 `index.html` → `git add -A && git commit -m "..." && git push` → 約 1 分鐘後自動更新。
+
 ## 本機預覽
 ```bash
 cd "$(dirname "$0")" && python3 -m http.server 8788
