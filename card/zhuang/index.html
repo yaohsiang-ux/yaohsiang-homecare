@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>莊博文｜臺北市私立燿翔居家長照機構</title>
+<meta name="description" content="莊博文 負責人｜臺北市私立燿翔居家長照機構：點一下就能撥號、加 LINE、導航、存入通訊錄。">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="莊博文 負責人｜臺北市私立燿翔居家長照機構">
+<meta property="og:description" content="漫漫長照路，燿翔陪您一起走。點開可直接撥號、加 LINE 好友、存入通訊錄。">
+<meta property="og:image" content="https://yaohsiang-ux.github.io/yaohsiang-homecare/card/og_zhuang.png">
+<meta property="og:url" content="https://yaohsiang-ux.github.io/yaohsiang-homecare/card/zhuang/">
+<link rel="canonical" href="https://yaohsiang-ux.github.io/yaohsiang-homecare/card/zhuang/">
+<meta name="theme-color" content="#D65A31">
+<link rel="icon" href="../logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --orange:#D65A31; --orange-dk:#A03E1F; --gold:#E6AF2E; --brown:#4B3621; --brown-mid:#6B4D33;
+  --cream:#FAF6F0; --white:#FFFFFF;
+}
+* { box-sizing:border-box; margin:0; padding:0 }
+html { -webkit-text-size-adjust:100% }
+body { background:#EFE6DA; color:var(--brown); font-family:"Inter","Noto Sans TC","PingFang TC",sans-serif; }
+a { color:inherit; text-decoration:none; -webkit-tap-highlight-color:rgba(214,90,49,.15) }
+.card { max-width:430px; margin:0 auto; min-height:100vh; background:var(--cream); position:relative;
+  border-top:6px solid var(--orange); box-shadow:inset 0 2px 0 var(--gold); padding:0 22px 30px; }
+.card::after { content:""; position:absolute; left:0; right:0; bottom:0; height:10px; background:var(--brown) }
+.head { display:flex; align-items:center; gap:14px; padding:26px 0 18px; border-bottom:2px solid var(--gold) }
+.head img { width:70px; height:70px; flex:none }
+.org { font-size:17px; font-weight:700; line-height:1.35 }
+.en { font-size:14px; font-weight:700; letter-spacing:.14em; margin-top:4px; white-space:nowrap }
+.person { display:flex; align-items:baseline; gap:14px; padding:16px 0 14px }
+.name { font-family:"Noto Sans TC",sans-serif; font-size:42px; font-weight:900; letter-spacing:.1em; line-height:1.15 }
+.title { font-size:17px; font-weight:700; letter-spacing:.1em }
+.tel { display:flex; align-items:center; gap:14px; background:var(--white); border-radius:12px; padding:14px 14px 14px 14px; margin-bottom:10px; min-height:64px }
+.tel.main { border:2px solid var(--orange) }
+.tel.sub { border:1.5px solid var(--gold) }
+.ic { flex:none; width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center }
+.ic svg { width:22px; height:22px; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round }
+.main .ic { background:var(--orange) } .main .ic svg { stroke:#fff }
+.sub .ic { border:1.5px solid var(--orange) } .sub .ic svg { stroke:var(--orange) }
+.tel .txt { flex:1; min-width:0 }
+.top { display:flex; justify-content:space-between; align-items:baseline; gap:8px }
+.lab { font-size:16px; font-weight:700; line-height:1.2 }
+.num { display:block; font-weight:800; letter-spacing:.01em; line-height:1.15; white-space:nowrap; font-variant-numeric:tabular-nums }
+.main .num { font-size:30px } .sub .num { font-size:24px }
+.go { flex:none; font-size:15px; font-weight:700; color:var(--orange-dk); white-space:nowrap }
+.row { display:flex; align-items:center; gap:10px; padding:9px 2px; font-size:16px; font-weight:500; min-height:44px }
+.row svg { flex:none; width:22px; height:22px; fill:none; stroke:var(--orange); stroke-width:2; stroke-linecap:round; stroke-linejoin:round }
+.row span { overflow-wrap:anywhere }
+.addr b { font-weight:inherit; white-space:nowrap }
+.row .more { margin-left:auto; flex:none; font-size:15px; font-weight:700; color:var(--orange-dk) }
+.btn { display:flex; align-items:center; justify-content:center; gap:10px; width:100%; min-height:54px; border-radius:12px;
+  font-size:18px; font-weight:700; margin-top:10px; }
+.btn svg { width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round }
+.btn.solid { background:var(--orange); color:#fff }
+.btn.line { background:var(--white); color:var(--brown); border:2px solid var(--brown) }
+.sep { border:0; border-top:2px solid var(--gold); margin:18px 0 }
+.slogan { font-family:"Noto Sans TC",sans-serif; font-size:21px; font-weight:900; letter-spacing:.04em; line-height:1.4 }
+.bar { width:36px; height:4px; border-radius:2px; background:var(--gold); margin:10px 0 16px }
+.svc { display:flex; gap:14px; align-items:center }
+.svc ul { list-style:none; flex:1 }
+.svc li { display:flex; align-items:center; gap:9px; font-size:17px; white-space:nowrap; font-weight:700; padding:8px 0; line-height:1.3 }
+.svc li svg { flex:none; width:24px; height:24px; fill:none; stroke:var(--orange); stroke-width:2; stroke-linecap:round; stroke-linejoin:round }
+.qr { flex:none; width:122px; background:var(--white); border:1.5px solid var(--gold); border-radius:12px; padding:12px; text-align:center }
+.qr img { display:block; width:100% }
+.qr b { display:block; font-size:14px; margin-top:8px; line-height:1.3 }
+.qr i { display:block; font-style:normal; font-size:16px; font-weight:800 }
+.foot { border-top:1.5px solid var(--gold); margin-top:22px; padding-top:12px; font-size:15px; font-weight:500; color:var(--brown-mid) }
+@media (max-width:350px) { .card{padding:0 14px 30px} .main .num{font-size:26px} .sub .num{font-size:21px} .svc{flex-direction:column;align-items:flex-start} .qr{width:150px} .name{font-size:36px} }
+</style>
+</head>
+<body>
+<main class="card">
+  <header class="head">
+    <img src="../logo.png" alt="燿翔居家長照機構 標誌">
+    <div>
+      <div class="org">臺北市私立<br>燿翔居家長照機構</div>
+      <div class="en">YAOHSIANG HOME CARE</div>
+    </div>
+  </header>
+
+  <section class="person">
+    <h1 class="name">莊博文</h1>
+    <div class="title">負責人</div>
+  </section>
+
+  <a class="tel main" href="tel:0972925721" aria-label="撥打手機 0972-925-721">
+    <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></span>
+    <span class="txt"><span class="top"><span class="lab">手機</span><span class="go">點一下撥打 ›</span></span><span class="num">0972-925-721</span></span>
+  </a>
+  <a class="tel sub" href="tel:0227035276" aria-label="撥打總機 02-2703-5276">
+    <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+    <span class="txt"><span class="top"><span class="lab">總機</span><span class="go">點一下撥打 ›</span></span><span class="num">02-2703-5276</span></span>
+  </a>
+
+  <a class="row" href="mailto:yaohsiang.ltci@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-9 5.7a2 2 0 0 1-2 0L2 7"/></svg><span>yaohsiang.ltci@gmail.com</span></a>
+  <a class="row" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E5%8C%97%E5%B8%82%E5%A4%A7%E5%AE%89%E5%8D%80%E4%BF%A1%E7%BE%A9%E8%B7%AF%E5%9B%9B%E6%AE%B5279%E8%99%9F8%E6%A8%93" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><span class="addr"><b>臺北市大安區</b><b>信義路四段279號</b><b>8樓808室</b></span><em class="more" style="font-style:normal">地圖 ›</em></a>
+
+  <a class="btn line" href="../zhuang.vcf" download="莊博文.vcf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6"/><path d="M22 11h-6"/></svg>存入手機通訊錄</a>
+
+  <hr class="sep">
+  <div class="slogan">漫漫長照路，燿翔陪您一起走</div>
+  <div class="bar"></div>
+
+  <div class="svc">
+    <ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"/><path d="m18 15-2-2"/><path d="m15 18-2-2"/></svg>長照專業服務</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>教育訓練</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>衛教講座與社區服務</li>
+    </ul>
+    <a class="qr" href="https://line.me/R/ti/p/@424xexyu" aria-label="加入 LINE 好友 @424xexyu">
+      <img src="../qr_line.svg" alt="LINE 加好友 QR 碼">
+      <b>加入 LINE 好友</b><i>@424xexyu</i>
+    </a>
+  </div>
+
+  <a class="btn solid" href="https://line.me/R/ti/p/@424xexyu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>加入 LINE 好友</a>
+
+  <footer class="foot">臺北市政府核准立案・居家式長照機構</footer>
+</main>
+</body>
+</html>
